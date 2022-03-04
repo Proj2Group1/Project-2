@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
+//#include "functions.h"
 
 /*
 On the first day of the trip, breakfast is allowed as an expense if the time of departure is before 7 a.m. 
@@ -14,19 +16,26 @@ The program should only ask for the amounts of allowable meals.
 */
 
 double breakfastCost(){
-    const double allowed_breakfast = 9.00;
-    double meal_fee;
-    printf("Did you eat breakfast before the alotted time of departure? (Y/N)");
-    
+    double total_breakfast;
+    printf("Please enter your trip's total breakfast cost:");
+    scanf("%lf", &total_breakfast);
+
+    return total_breakfast;
 
 }
 
 double lunchCost(){
-    const double allowed_lunch = 12.00;
+    double total_lunch;
+    printf("Please enter your trip's total lunch cost:");
+    scanf("%lf", &total_lunch);
 
+    return total_lunch;
 }
 
 double dinnerCost(){
-    const double allowed_dinner = 16.00;
+    double total_dinner;
+    printf("Please enter your trip's total dinner cost:");
+    scanf("%lf", &total_dinner);
 
+    return total_dinner;
 }

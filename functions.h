@@ -86,7 +86,7 @@ double parkingFee();
 
 //nor parameter required 
 //return the company covered cost for parking 
-double companyCoveredParkingFee();
+double companyCoveredParkingFee(int days);
 
 //no parameter required 
 //returns total money value of Conference Fees

@@ -10,6 +10,8 @@ int main()
     double priceCarRent = 0.0; 
     bool privCarUsed = false; 
     char taxiWasUsed;  
+    double hotelCost =0.0; 
+    double hotelCostByCompany =0.0; 
 
     printf("Hello, this program calculates and displays the total expenses during a trip.");
     printf("Would you like to use this program:\nPress 1 if yes\nPress 2 to quit the program\n");
@@ -59,6 +61,9 @@ int main()
                 double taxi = taxiCost(); 
                 double companyCovTaxi = taxiCostCoveredByCompany(taxiDays); 
             }
+            //HOTEL COST
+            hotelCost = totalHotelCost(totalNumOfDays); 
+            hotelCostByCompany = hotelCostCompanyCovered(totalNumOfDays); 
             
         }
         else if(choice ==2)

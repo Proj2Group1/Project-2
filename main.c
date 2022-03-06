@@ -17,6 +17,11 @@ int main()
     int daysParked =0; 
     double airfareFee =0; 
     double conference =0; 
+    double totalCostOfFood =0.0; 
+    int numOfBreakfast =0;
+    int numOfLunch =0;
+    int numOfDinner =0; 
+    double companyCovFood =0;
 
     printf("Hello, this program calculates and displays the total expenses during a trip.");
     printf("Would you like to use this program:\nPress 1 if yes\nPress 2 to quit the program\n");
@@ -86,6 +91,16 @@ int main()
 
             //CONFERENCE FEE
             conference = conferenceFee(); 
+            
+            //FOOD COST
+            totalCostOfFood = breakfastCost() + lunchCost() + dinnerCost(); 
+            
+            // # of meals covered 
+            numOfBreakfast = countBreakfast(totalNumOfDays, departureTime, arrivalTime); 
+            numOfLunch = countLunch(totalNumOfDays, departureTime, arrivalTime); 
+            numOfDinner = countDinner(totalNumOfDays, departureTime, arrivalTime); 
+            companyCovFood = companyCoveredFood(numOfBreakfast, numOfLunch, numOfDinner); 
+            
             
         }
         else if(choice ==2)

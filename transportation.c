@@ -12,8 +12,15 @@ double privateVehicle(bool privCar)
     if(privCar) //private car was used 
     {
         double milesDriven =0.0; 
+        
         printf("How many miles have you driven in total?");
         scanf("%f", &milesDriven); 
+        //input validaiton loop 
+        while(milesDriven <0)
+        {
+            printf("\nWrong Input!!!\nHow many miles have you driven in total?");
+            scanf("%f", &milesDriven); 
+        }
         return milesDriven*0.27;
     }
     else //private car was not used 
@@ -41,6 +48,12 @@ double taxiCost()
     //ask the user to input total taxi cost 
     printf("\nHow much did you spend on taxi during your trip?");
     scanf("%f", &totalTaxiCost); //save it 
+    //input validation loop 
+    while(totalTaxiCost <0)
+    {
+        printf("\nWrong Input!!!\nHow much did you spend on taxi during your trip?");
+        scanf("%f", &totalTaxiCost); //save it 
+    }
     //return the result 
     return totalTaxiCost; 
 }

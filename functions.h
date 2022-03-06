@@ -93,7 +93,8 @@ double companyCoveredParkingFee();
 double conferenceFee();
 
 //1 parameter: total number of days 
-//calculate and return total hotel cost 
+//subtract one from the days to get total # of nights stayed at hotel and calculate total hotel cost 
+//return hotel cost 
 double totalHotelCost(int days);
 
 //1 parameter: total number of days 

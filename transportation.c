@@ -9,22 +9,25 @@ Calculating the cost of trasportation cost during the trip
 
 double privateVehicle(bool privCar)
 {   
-    if(privCar)
+    if(privCar) //private car was used 
     {
-
+        double milesDriven =0.0; 
+        printf("How many miles have you driven in total?");
+        scanf("%f", &milesDriven); 
+        return milesDriven*0.27;
     }
-    else
+    else //private car was not used 
     {
         return 0; 
     }
 
 }
 
-double carRental(int days, bool rented)
+double carRental(int days, bool rented, double pricePerDay)
 {
     if(rented) //car was rented 
     {
-
+        return days*pricePerDay; 
     }
     else //car was not rented 
     {
@@ -41,8 +44,8 @@ double taxiCost()
     //return the result 
     return totalTaxiCost; 
 }
-
+//taxi cost covered by the company 
 double taxiCostCoveredByCompany(int days)
 {
-
+    return days*10; 
 }

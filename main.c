@@ -22,6 +22,15 @@ int main()
     int numOfLunch =0;
     int numOfDinner =0; 
     double companyCovFood =0;
+    double totalExpenses = 0;
+    double companyCovExpenses =0; 
+    int taxiDays =0; 
+    double taxi =0;
+    double companyCovTaxi  =0; 
+    double totalRentPrice =0;
+    double privateVehicleCost =0;
+    double reimbursement =0.0;
+    double moneySaved =0.0; 
 
     printf("Hello, this program calculates and displays the total expenses during a trip.");
     printf("Would you like to use this program:\nPress 1 if yes\nPress 2 to quit the program\n");
@@ -42,11 +51,11 @@ int main()
             //if car was rented or private car used 
             if(carRented)
             {
-                double totalRentPrice = carRental(totalNumOfDays, priceCarRent); 
+                totalRentPrice = carRental(totalNumOfDays, priceCarRent); 
             }
             else if(privCarUsed)
             {
-                double privateVehicleCost = privateVehicle(); 
+                privateVehicleCost = privateVehicle(); 
             }
             //ask if taxi was used 
             printf("Did you use taxi during your trip?");
@@ -68,8 +77,8 @@ int main()
                     printf("\nWrong Input!!\nHow many days did you take taxi? ");
                     scanf("%d", &taxiDays);
                 }
-                double taxi = taxiCost(); 
-                double companyCovTaxi = taxiCostCoveredByCompany(taxiDays); 
+                taxi = taxiCost(); 
+                companyCovTaxi = taxiCostCoveredByCompany(taxiDays); 
             }
             //HOTEL COST
             hotelCost = totalHotelCost(totalNumOfDays); 
@@ -101,7 +110,26 @@ int main()
             numOfDinner = countDinner(totalNumOfDays, departureTime, arrivalTime); 
             companyCovFood = companyCoveredFood(numOfBreakfast, numOfLunch, numOfDinner); 
             
+            //TOTAL EXPENSES 
+            totalExpenses = totalCostOfFood + airfareFee + conference + parkingCost + hotelCost + taxi + privateVehicleCost + totalRentPrice;
+            companyCovExpenses = companyCovFood + parkingCostComp + hotelCostByCompany + companyCovTaxi;
+            if(totalExpenses > companyCovExpenses)
+            {
+                moneySaved =0; 
+                reimbursement = totalExpenses = companyCovExpenses; 
+            } 
+            else if(totalExpenses < companyCovExpenses)
+            {
+                moneySaved = companyCovExpenses - totalExpenses; 
+                reimbursement =0; 
+            }
+            else
+            {
+                moneySaved =0;
+                reimbursement =0;
+            }
             
+            //DISPLAY INFORMATION 
         }
         else if(choice ==2)
         {

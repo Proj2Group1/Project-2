@@ -12,6 +12,11 @@ int main()
     char taxiWasUsed;  
     double hotelCost =0.0; 
     double hotelCostByCompany =0.0; 
+    double parkingCost =0.0;
+    double parkingCostComp =0.0;
+    int daysParked =0; 
+    double airfareFee =0; 
+    double conference =0; 
 
     printf("Hello, this program calculates and displays the total expenses during a trip.");
     printf("Would you like to use this program:\nPress 1 if yes\nPress 2 to quit the program\n");
@@ -64,6 +69,23 @@ int main()
             //HOTEL COST
             hotelCost = totalHotelCost(totalNumOfDays); 
             hotelCostByCompany = hotelCostCompanyCovered(totalNumOfDays); 
+            
+            //PARKING COST 
+            printf("\nHow many days did you park?"); 
+            scanf("%d", &daysParked); 
+            while(daysParked <0)
+            {
+                printf("\nWrong Input!!\nHow many days did you park?"); 
+                scanf("%d", &daysParked); 
+            }
+            parkingCost = parkingFee();
+            parkingCostComp = companyCoveredParkingFee(daysParked); 
+
+            //AIRFARE 
+            airfareFee = airfareCost(); 
+
+            //CONFERENCE FEE
+            conference = conferenceFee(); 
             
         }
         else if(choice ==2)

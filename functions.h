@@ -21,11 +21,11 @@ int* getArrivalTime();
 //return bool (true or false)
 bool rentedCar();
 
-//no parameter 
+//1 paramter: car rented or not as bool
 //if the user rented car then ask the user the car rental price per day 
 //else (not rented a car) do not ask the user to enter rental car price and return 0
 //returns the rent price of a car as double  (if car was rented)
-double getPriceCarRentals();
+double getPriceCarRentals(bool rented);
 
 //no parameter required 
 // ask the user if they used private car 

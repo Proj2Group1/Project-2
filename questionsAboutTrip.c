@@ -17,7 +17,6 @@ int getTotalDays(){
 void getDepartureTime(int departureTime[]){
     const int MAX = 2;
     int counter;
-    int departureTime[2] = {0,0};
     printf("Enter your departure time in 24-hour (military) format:\n"
            "Hit enter to separate the hour and minutes.\n"
            "Example input:\n"
@@ -35,7 +34,6 @@ void getArrivalTime(int arrivalTime[]){
     // military time
     const int MAX = 2;
     int counter;
-    int arrivalTime[2] = {0,0};
     printf("Enter your arrival time in 24-hour (military) format:\n"
            "Hit enter to separate the hour and minutes.\n"
            "Example input:\n"

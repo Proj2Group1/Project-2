@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-//#include ”functions.h”
+#include ”functions.h”
 
 double insertDoublePos() {
     double cost = -1.0;

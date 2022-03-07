@@ -1,5 +1,5 @@
 #include <stdio.h>
-//#include”functions.h”
+#include”functions.h”
 
 int countBreakfast(int* departureTime, int* arrivalTime, int days) {
     int count = days;

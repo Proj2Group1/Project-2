@@ -7,39 +7,24 @@ Calculating the cost of trasportation cost during the trip
 */
 #include "functions.h"
 
-double privateVehicle(bool privCar)
+double privateVehicle()
 {   
-    if(privCar) //private car was used 
-    {
-        double milesDriven =0.0; 
+    double milesDriven =0.0; 
         
-        printf("How many miles have you driven in total?");
-        scanf("%f", &milesDriven); 
-        //input validaiton loop 
-        while(milesDriven <0)
-        {
-            printf("\nWrong Input!!!\nHow many miles have you driven in total?");
-            scanf("%f", &milesDriven); 
-        }
-        return milesDriven*0.27;
-    }
-    else //private car was not used 
+    printf("How many miles have you driven in total?");
+    scanf("%lf", &milesDriven); 
+    //input validaiton loop 
+    while(milesDriven <0)
     {
-        return 0; 
+        printf("\nWrong Input!!!\nHow many miles have you driven in total?");
+        scanf("%f", &milesDriven); 
     }
-
+    return milesDriven*0.27;
 }
 
-double carRental(int days, bool rented, double pricePerDay)
+double carRental(int days, double pricePerDay)
 {
-    if(rented) //car was rented 
-    {
-        return days*pricePerDay; 
-    }
-    else //car was not rented 
-    {
-        return 0; //no car rental price 
-    }
+    return days*pricePerDay; 
 }
 
 double taxiCost()
@@ -47,12 +32,12 @@ double taxiCost()
     double totalTaxiCost =0; 
     //ask the user to input total taxi cost 
     printf("\nHow much did you spend on taxi during your trip?");
-    scanf("%f", &totalTaxiCost); //save it 
+    scanf("%lf", &totalTaxiCost); //save it 
     //input validation loop 
     while(totalTaxiCost <0)
     {
         printf("\nWrong Input!!!\nHow much did you spend on taxi during your trip?");
-        scanf("%f", &totalTaxiCost); //save it 
+        scanf("%lf", &totalTaxiCost); //save it 
     }
     //return the result 
     return totalTaxiCost; 

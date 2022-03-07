@@ -1,11 +1,11 @@
 #include "functions.h"
 
-int main()
+int main(void)
 {
     int choice =0; 
     int totalNumOfDays =0; 
-    int* departureTime = NULL;
-    int* arrivalTime = NULL;
+    int departureTime[2] = {0,0};
+    int arrivalTime[2] = {0,0};
     bool carRented = false; 
     double priceCarRent = 0.0; 
     bool privCarUsed = false; 
@@ -31,12 +31,17 @@ int main()
     double privateVehicleCost =0;
     double reimbursement =0.0;
     double moneySaved =0.0; 
+    double breakfast =0;
+    double lunch =0;
+    double dinner;
 
     printf("Hello, this program calculates and displays the total expenses during a trip.");
-    printf("Would you like to use this program:\nPress 1 if yes\nPress 2 to quit the program\n");
-    while(choice!=2)
+    
+    do
     {
-        printf("\nWould you like to calculate the expenses of another trip?\nPress 1 for yes\nPress 2 for no"); 
+        fflush(stdin);
+        printf("Would you like to use this program:\nPress 1 if yes\nPress 2 to quit the program\n");
+        scanf("%d", choice);
         
         if(choice ==1)
         {
@@ -57,6 +62,8 @@ int main()
             {
                 privateVehicleCost = privateVehicle(); 
             }
+            fflush(stdin);
+            
             //ask if taxi was used 
             printf("Did you use taxi during your trip?");
             scand("%c", &taxiWasUsed); 
@@ -102,7 +109,13 @@ int main()
             conference = conferenceFee(); 
             
             //FOOD COST
-            totalCostOfFood = breakfastCost() + lunchCost() + dinnerCost(); 
+            fflush(stdin);
+            breakfast = breakfastCost();
+            fflush(stdin);
+            lunch = lunchCost();
+            fflush(stdin);
+            dinner = dinnerCost();
+            totalCostOfFood = + lunchCost() + dinnerCost(); 
             
             // # of meals covered 
             numOfBreakfast = countBreakfast(totalNumOfDays, departureTime, arrivalTime); 
@@ -129,7 +142,9 @@ int main()
                 reimbursement =0;
             }
             
-            //DISPLAY INFORMATION 
+            //DISPLAY INFORMATION
+            printf("\n\nTotal money saved is: %lf", moneySaved);
+            printf("\nTotal reimbursement is: $lf", reimbursement);
         }
         else if(choice ==2)
         {
@@ -139,5 +154,5 @@ int main()
         {
             printf("Wrong Input!!"); 
         }
-    }
+    }while(choice !=2);
 }

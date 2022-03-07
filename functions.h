@@ -9,12 +9,12 @@ int getTotalDays();
 //no parameter required 
 //asks the user the departure time 
 //returns the time of the departure as an int pointer  
-int* getDepartueTime();
+void getDepartueTime(int departureTime[]);
 
 //no parameter required 
 //asks the user the arrival time 
 //returns the time of the arrival as an int pointer 
-int* getArrivalTime();
+void getArrivalTime(int arrivalTime[]);
 
 //no parameter required 
 //ask the the user if they rented car
@@ -66,19 +66,19 @@ double dinnerCost();
 
 //3 parameter: number of days of trip, deprature time, arrival time
 //calculates and returns the number of breakfast meals covered by the company 
-int countBreakfast(int days, int* departureTime, int* arrivalTime);
+int countBreakfast(int departureTime[], int arrivalTime[], int days);
 
 //3 parameter: number of days of trip, deprature time, arrival time
 //calculates and returns the number of lunch meals covered by the company 
-int countLunch(int days, int* departureTime, int* arrivalTime);
+int countLunch(int departureTime[], int arrivalTime[], int days);
 
 //3 parameter: number of days of trip, deprature time, arrival time
 //calculates and returns the number of dinner meals covered by the company 
-int countDinner(int days, int* departureTime, int* arrivalTime);
+int countDinner(int departureTime[], int arrivalTime[], int days);
 
 //3 parameter: numebr of breakfast, number of lunch, number of dinner 
 //calculates and returns the total amount of meal cost covered by the company 
-int companyCoveredFood(int breakfast, int lunch, int dinner);
+int companyCoveredFood(int departureTime[], int arrivalTime[], int days);
 
 //no parameter required
 //return the total parking cost during the trip 

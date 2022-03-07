@@ -17,15 +17,15 @@ double parkingFee() {
 }
 
 //company only covers $6 of parking fees
-double CompanyCoveredParkingFee (int days) {
+double companyCoveredParkingFee (int days) {
 
-    double total_CompanyCoveredParkingFee;
+    double total_companyCoveredParkingFee;
 
     do
     {
-        total_CompanyCoveredParkingFee = (6 * days);
+        total_companyCoveredParkingFee = (6 * days);
 
-    } while (total_CompanyCoveredParkingFee < 0);
+    } while (total_companyCoveredParkingFee < 0);
 
-    return total_CompanyCoveredParkingFee;
+    return total_companyCoveredParkingFee;
 }

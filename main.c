@@ -79,7 +79,7 @@ int main(void)
                 int taxiDays =0; 
                 printf("\nHow many days did you take taxi? ");
                 scanf("%d", &taxiDays);
-                while(taxiDays <0)
+                while(taxiDays <0 || taxiDays > totalNumOfDays)
                 {
                     printf("\nWrong Input!!\nHow many days did you take taxi? ");
                     scanf("%d", &taxiDays);

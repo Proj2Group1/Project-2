@@ -14,7 +14,7 @@ int getTotalDays(){
 
 /* Asks user for departure time.
     returns time as int & in military time. */
-int *getDepartureTime(){
+void getDepartureTime(int departureTime[]){
     const int MAX = 2;
     int counter;
     int departureTime[2] = {0,0};
@@ -27,12 +27,11 @@ int *getDepartureTime(){
     }
     /* if want to print out the input: 
     printf("&d:&d", (*ptr)[0],(*ptr)[1]); */
-    return departureTime;
 }
 
 /* Asks user for arrival time.
     returns time as int & in military time. */
-int *getArrivalTime(){
+void getArrivalTime(int arrivalTime[]){
     // military time
     const int MAX = 2;
     int counter;
@@ -44,8 +43,6 @@ int *getArrivalTime(){
     for(counter = 0; counter<MAX; counter++){
         scanf("%d", &arrivalTime[counter]);
     }
-
-    return arrivalTime;
 }
 
 /* Asks the user if they rented a car.

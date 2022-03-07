@@ -1,6 +1,9 @@
 #ifndef FUNCTIONS_H
 #define FUNCTIONS_H
 
+#include<stdio.h>
+#include<stdbool.h>
+
 //no parameter required 
 //asks the user the total number of days on trip
 //returns the number days entered by the user 

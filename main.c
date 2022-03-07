@@ -40,8 +40,8 @@ int main(void)
     do
     {
         fflush(stdin);
-        printf("Would you like to use this program:\nPress 1 if yes\nPress 2 to quit the program\n");
-        scanf("%d", choice);
+        printf("\nWould you like to use this program:\nPress 1 if yes\nPress 2 to quit the program\n");
+        scanf("%d", &choice);
         
         if(choice ==1)
         {
@@ -66,12 +66,12 @@ int main(void)
             
             //ask if taxi was used 
             printf("Did you use taxi during your trip?");
-            scand("%c", &taxiWasUsed); 
+            scanf("%c", &taxiWasUsed); 
             while(taxiWasUsed !='Y' && taxiWasUsed !='y' && taxiWasUsed !='N' && taxiWasUsed !='n')
             {
                 //ask if taxi was used 
                 printf("\nWrong Input!!!\nDid you use taxi during your trip?");
-                 scand("%c", &taxiWasUsed);
+                 scanf("%c", &taxiWasUsed);
             }
             //taxi was used 
             if(taxiWasUsed == 'Y' || taxiWasUsed == 'y')
@@ -94,13 +94,13 @@ int main(void)
             //PARKING COST 
             printf("\nHow many days did you park?"); 
             scanf("%d", &daysParked); 
-            while(daysParked <0)
+            while(daysParked <0 || daysParked > totalNumOfDays)
             {
                 printf("\nWrong Input!!\nHow many days did you park?"); 
                 scanf("%d", &daysParked); 
             }
             parkingCost = parkingFee();
-            parkingCostComp = CompanyCoveredParkingFee(daysParked); 
+            parkingCostComp = companyCoveredParkingFee(daysParked); 
 
             //AIRFARE 
             airfareFee = airfareCost(); 
@@ -143,8 +143,8 @@ int main(void)
             }
             
             //DISPLAY INFORMATION
-            printf("\n\nTotal money saved is: %lf", moneySaved);
-            printf("\nTotal reimbursement is: $lf", reimbursement);
+            printf("\n\nTotal money saved is: %.2lf", moneySaved);
+            printf("\nTotal reimbursement is: %.2lf", reimbursement);
         }
         else if(choice ==2)
         {

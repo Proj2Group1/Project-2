@@ -17,7 +17,7 @@ int getTotalDays(){
 int *getDepartureTime(){
     const int MAX = 2;
     int counter;
-    int departureTime[2] = {0,0,0};
+    int departureTime[2] = {0,0};
     printf("Enter your departure time in 24-hour (military) format:\n"
            "Hit enter to separate the hour and minutes.\n"
            "Example input:\n"
@@ -36,14 +36,13 @@ int *getArrivalTime(){
     // military time
     const int MAX = 2;
     int counter;
-    int arrivalTime;
-    int arrivalTime[2] = {0,0,0};
+    int arrivalTime[2] = {0,0};
     printf("Enter your arrival time in 24-hour (military) format:\n"
            "Hit enter to separate the hour and minutes.\n"
            "Example input:\n"
            "7\n00");
     for(counter = 0; counter<MAX; counter++){
-        scanf("%d", &departureTime[counter]);
+        scanf("%d", &arrivalTime[counter]);
     }
 
     return arrivalTime;
@@ -52,13 +51,14 @@ int *getArrivalTime(){
 /* Asks the user if they rented a car.
     returns true or false */
 bool rentedCar(){
-    bool renting;
     int temp;
     printf("Did you rent a car during your trip? 1 is true and 0 is false: ");
     scanf("%d", &temp);
-    rented = temp;
-
-    if(renting){
+    while(temp < 0 || temp > 1){
+        printf("Invalid. Enter 1 if true or 0 if false: ");
+        scanf("&d", &temp);
+    }
+    if (temp == 1){
         return true;
     }
     else return false;
@@ -73,6 +73,7 @@ double getPriceCarRentals(bool rented){
     if (rented){
         printf("Please enter your rental price per day: ");
         scanf("%lf", &price);
+        return price;
     }
     else return 0;
 }
@@ -80,13 +81,10 @@ double getPriceCarRentals(bool rented){
 /* Asks the user if they used a private car instead. 
     returns true or false. */
 bool privateCar(){
-    bool private;
     int temp;
     printf("Did you use a private car during your trip? 1 is true and 0 is false: ");
     scanf("%d", &temp);
-    private = temp;
-
-    if(private){
+    if(temp == 1){
         return true;
     }
     else return false;

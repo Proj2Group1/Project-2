@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "functions.h"
 
 //amount spent on parking fees
 double parkingFee() {

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-//#include "functions.h"
+#include "functions.h"
 
 /* Asks the user for the total num of days on trip. 
     returns the int number days */
@@ -56,7 +56,7 @@ bool rentedCar(){
     scanf("%d", &temp);
     while(temp < 0 || temp > 1){
         printf("Invalid. Enter 1 if true or 0 if false: ");
-        scanf("&d", &temp);
+        scanf("%d", &temp);
     }
     if (temp == 1){
         return true;

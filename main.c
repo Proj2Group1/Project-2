@@ -143,6 +143,8 @@ int main(void)
             }
             
             //DISPLAY INFORMATION
+            printf("\nThe total expenses incurred by the businessperson: %.2lf", totalExpenses);
+            printf("\nThe total allowable expenses for the trip, %.2lf", companyCovExpenses); 
             printf("\n\nTotal money saved is: %.2lf", moneySaved);
             printf("\nTotal reimbursement is: %.2lf", reimbursement);
         }

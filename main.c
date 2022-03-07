@@ -47,8 +47,8 @@ int main(void)
         {
             //get all user inputs 
             totalNumOfDays = getTotalDays(); 
-            departureTime = getDepartueTime();
-            arrivalTime = getArrivalTime();
+            getDepartureTime(departureTime);
+            getArrivalTime(arrivalTime);
             carRented = rentedCar(); 
             priceCarRent = getPriceCarRentals(carRented); 
             privCarUsed = privateCar(); 

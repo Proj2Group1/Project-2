@@ -74,7 +74,7 @@ int main(void)
                  scand("%c", &taxiWasUsed);
             }
             //taxi was used 
-            if(taxiWasUsed == 'Y' || taxiWasUsed == 'n')
+            if(taxiWasUsed == 'Y' || taxiWasUsed == 'y')
             {
                 int taxiDays =0; 
                 printf("\nHow many days did you take taxi? ");

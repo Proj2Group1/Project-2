@@ -1,20 +1,6 @@
 #include <stdio.h>
 //#include”functions.h”
 
-/*int countBreakfast(int* departureTime, int* arrivalTime) {
-    int count = 0;
-
-    if (departureTime[0] <= 6)
-        count++;
-    if (arrivalTime[0] > 8 && arrivalTime[0] <= 13)
-        count++;
-
-    printf("breakfasts: "); //DEBUGGING
-    printf("%d", count); //DEBUGGING
-    printf("   "); //DEBUGGING
-    return count;
-}*/
-
 int countBreakfast(int* departureTime, int* arrivalTime, int days) {
     int count = days;
 
@@ -58,32 +44,14 @@ double companyCoveredFood(int* departureTime, int* arrivalTime, int days) {
     costCovered += 12.00 * l;
     costCovered += 16.00 * d;
 
-    printf("breakfasts: "); //DEBUGGING
-    printf("%d", b); //DEBUGGING
-    printf("   "); //DEBUGGING
-    printf("lunches: "); //DEBUGGING
-    printf("%d", l); //DEBUGGING
-    printf("   "); //DEBUGGING
-    printf("dinners: "); //DEBUGGING
-    printf("%d", d); //DEBUGGING
-    printf("   "); //DEBUGGING
-
     return costCovered;
 }
 
-//DEBUGGING below
-int main() {
+/*int main() {
     int arr[] = {0, 0, 0};
     int arr2[] = {0, 0, 0};
-    printf("days is set to 2\n");
-    for (int i = 0; i < 24; i++) {
-        printf("Both arrival and departure: ");
-        printf("%d", i);
-        printf(":00     ");
-        printf("%.2f", companyCoveredFood(arr, arr, 2));
-        printf("\n");
-        arr[0] = i;
-        arr2[0] = i;
-    }
+    printf("%d", countBreakfast(arr, arr2, 4));
+    printf("\n");
+
     return 0;
-}
+}*/

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "functions.h"
+//include "functions.h"
 
 /*
 On the first day of the trip, breakfast is allowed as an expense if the time of departure is before 7 a.m. 

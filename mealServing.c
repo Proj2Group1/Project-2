@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include”functions.h”
 
-int countBreakfast(int* departureTime, int* arrivalTime, int days) {
+int countBreakfast(int departureTime[], int arrivalTime[], int days) {
     int count = days;
 
     if (departureTime[0] <= 6 && arrivalTime[0] > 8)
@@ -12,7 +12,7 @@ int countBreakfast(int* departureTime, int* arrivalTime, int days) {
         return count -=1; 
 }
 
-int countLunch(int* departureTime, int* arrivalTime, int days) {
+int countLunch(int departureTime[], int arrivalTime[], int days) {
     int count = days;
 
     if (departureTime[0] <= 11 && arrivalTime[0] > 13)
@@ -23,7 +23,7 @@ int countLunch(int* departureTime, int* arrivalTime, int days) {
         return count -=1; 
 }
 
-int countDinner(int* departureTime, int* arrivalTime, int days) {
+int countDinner(int departureTime[], int arrivalTime[], int days) {
     int count = days;
 
     if (departureTime[0] <= 17 && arrivalTime[0] > 19)
@@ -34,7 +34,7 @@ int countDinner(int* departureTime, int* arrivalTime, int days) {
         return count -=1; 
 }
 
-double companyCoveredFood(int* departureTime, int* arrivalTime, int days) {
+double companyCoveredFood(int departureTime[], int arrivalTime[], int days) {
     double costCovered = 0.0;
 
     int b = countBreakfast(departureTime, arrivalTime, days);

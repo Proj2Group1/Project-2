@@ -100,7 +100,7 @@ int main(void)
                 scanf("%d", &daysParked); 
             }
             parkingCost = parkingFee();
-            parkingCostComp = companyCoveredParkingFee(daysParked); 
+            parkingCostComp = CompanyCoveredParkingFee(daysParked); 
 
             //AIRFARE 
             airfareFee = airfareCost(); 
@@ -118,10 +118,10 @@ int main(void)
             totalCostOfFood = + lunchCost() + dinnerCost(); 
             
             // # of meals covered 
-            numOfBreakfast = countBreakfast(totalNumOfDays, departureTime, arrivalTime); 
-            numOfLunch = countLunch(totalNumOfDays, departureTime, arrivalTime); 
-            numOfDinner = countDinner(totalNumOfDays, departureTime, arrivalTime); 
-            companyCovFood = companyCoveredFood(numOfBreakfast, numOfLunch, numOfDinner); 
+            numOfBreakfast = countBreakfast(departureTime, arrivalTime, totalNumOfDays); 
+            numOfLunch = countLunch(departureTime, arrivalTime, totalNumOfDays); 
+            numOfDinner = countDinner(departureTime, arrivalTime, totalNumOfDays); 
+            companyCovFood = companyCoveredFood(departureTime, arrivalTime, totalNumOfDays); 
             
             //TOTAL EXPENSES 
             totalExpenses = totalCostOfFood + airfareFee + conference + parkingCost + hotelCost + taxi + privateVehicleCost + totalRentPrice;

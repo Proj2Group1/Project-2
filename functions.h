@@ -81,7 +81,7 @@ int countDinner(int departureTime[], int arrivalTime[], int days);
 
 //3 parameter: numebr of breakfast, number of lunch, number of dinner 
 //calculates and returns the total amount of meal cost covered by the company 
-int companyCoveredFood(int departureTime[], int arrivalTime[], int days);
+double companyCoveredFood(int departureTime[], int arrivalTime[], int days);
 
 //no parameter required
 //return the total parking cost during the trip 

@@ -24,8 +24,6 @@ void getDepartureTime(int departureTime[]){
     for(counter = 0; counter<MAX; counter++){
         scanf("%d", &departureTime[counter]);
     }
-    /* if want to print out the input: 
-    printf("&d:&d", (*ptr)[0],(*ptr)[1]); */
 }
 
 /* Asks user for arrival time.

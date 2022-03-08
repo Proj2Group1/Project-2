@@ -45,4 +45,4 @@ double dinnerCost(){
         
     } while (total_dinner < 0);
     return total_dinner;
-}
+} 
